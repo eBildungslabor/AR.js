@@ -196,7 +196,7 @@ canvas.style.height = '512px';
 var context = canvas.getContext('2d')
 
 var kanjiImage = new Image;
-hiroImage.onload = function() {
+kanjiImage.onload = function() {
         console.log('kanji image loaded')
         
         if( location.hash.substr(1) !== '' ){
@@ -256,7 +256,7 @@ function updateARCode(){
 function generateArCodeCanvas(canvas, text, onLoad){
         var context = canvas.getContext('2d')
         
-        context.drawImage(hiroImage, 0, 0, canvas.width, canvas.height);
+        context.drawImage(kanjiImage, 0, 0, canvas.width, canvas.height);
 
         generateQrCodeImage(text, function onLoaded(qrCodeImage){
                 console.log('qrcode generated')
