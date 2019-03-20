@@ -171,7 +171,7 @@ function generatePdf(){
                         },
                         {
                                 text: [
-                                        'Der AR-Inhalt erscheint 😎.',
+                                        'Der AR-Inhalt erscheint.',
                                         { text: 'Geschafft!', bold: true, },
                                         'Viel Spaß mit der Augmented Reality im Browser',                                        
                                 ],
@@ -225,7 +225,7 @@ function updateARCode(){
         
         // generate the ar-code canvas
         generateArCodeCanvas(canvas, urlQrCode, function onReady(){
-                console.log('ar-code generated for', urlQrCode)
+                console.log('AR-Code für', urlQrCode)
         })
 
         if( hideUiEnabled === true ){
