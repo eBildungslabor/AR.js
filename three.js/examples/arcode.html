@@ -195,9 +195,9 @@ canvas.style.height = '512px';
 
 var context = canvas.getContext('2d')
 
-var hiroImage = new Image;
+var kanjiImage = new Image;
 hiroImage.onload = function() {
-        console.log('hiro image loaded')
+        console.log('kanji image loaded')
         
         if( location.hash.substr(1) !== '' ){
                 var parameters = JSON.parse(decodeURIComponent(location.hash.substr(1)))
@@ -211,7 +211,7 @@ hiroImage.onload = function() {
 
         updateARCode()
 }
-hiroImage.src = '../../data/images/hiro.png';
+hiroImage.src = '../../data/images/kanji.png';
 
 function updateARCode(){
         var urlQrCode = document.querySelector('#urlQrCode').value
