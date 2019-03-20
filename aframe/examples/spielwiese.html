@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+	<!-- 
+  
+  Gestalte Dir Deine eigene Augmented Reality.
+  Sie besteht aus 
+  a) einem AR-Inhalt: dieser erscheint als 3D Inhalt auf dem Smartphone/ Tablet
+  b) einem Marker: dieser wird gescannt, um den Inhalt sichtbar zu machen.
+  
+  Um das ursprüngliche Beispiel zu sehen, öffnest Du die URL
+  https://ebildungslabor.github.io/AR.js/aframe/examples/spielwiese.html
+  Dann erlaubst Du Kamerazugriff.
+  Dann scannst Du dieses Bild (auf einem anderen Gerät öffnen oder vorher ausdrucken):
+  https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg
+ 
+  -->
+  
+<script src="vendor/aframe/build/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
+<script src="../build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - Beispiel für webbasierte Augmented Reality
+</div>
+	
+	<a-scene embedded arjs='sourceType: webcam;'>
+
+<!-- Hier fügst Du den gewünschten AR-Inhalt ein -->
+		<a-sphere position="0 0.5 0" radius="0.5" color="#efe8ea"></a-sphere>
+		<a-text value="Hello, World!"></a-text>
+
+<!-- Hier legst Du den Marker fest -->
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	
+  </a-scene>
+</body>
+</html>
