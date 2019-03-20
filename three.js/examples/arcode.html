@@ -23,7 +23,7 @@
         <div class="row" id='row-ui' >
                 <div class="col s12">
                         <a class="waves-effect waves-light btn" onclick='hideUI()'><i class="material-icons right">reorder</i>Hide</a>
-                        <h1 class='center-align'>Erstelle Deinen AR-Code!</h1>
+                        <h1 class='center-align'>AR Code ( = QR Code + Augmented Reality)</h1>
                 </div>
 
                 <div class="col s12">
@@ -32,23 +32,23 @@
 
                 <div class="input-field col s3">
                         <input type="checkbox" id="saveInUrl" />
-                        <label for="saveInUrl">Save in url</label>
+                        <label for="saveInUrl">In URL übernehmen</label>
                         <input type="checkbox" id="hideUiEnabled" type="hidden"/>
                 </div>                
 
 
                 <div class="input-field col s4 offset-s4">
-                        <a href='https://medium.com/arjs/ar-code-a-fast-path-to-augmented-reality-60e51be3cbdf' target='_blank' class="waves-effect waves-light btn-large">
+                        <a href='https://ebildungslabor.de/blog/arjs' target='_blank' class="waves-effect waves-light btn-large">
                                 <i class="material-icons right">info</i>
                                 Info
                         </a>
-                        <a onclick='generatePdf()' class="waves-effect waves-light btn-large" title='Generate a PDF instruction page'>Pdf</a>
+                        <a onclick='generatePdf()' class="waves-effect waves-light btn-large" title='Erstelle Dir ein PDF mit Anleitungstext'>Pdf</a>
                 </div>                
 
         </div>
         <div class="row">
                 <div class="col s2">
-                        <a class="waves-effect waves-light btn" onclick='showUI()' id='btnShowUI' style='display:none;'><i class="material-icons right">reorder</i>Show</a>
+                        <a class="waves-effect waves-light btn" onclick='showUI()' id='btnShowUI' style='display:none;'><i class="material-icons right">reorder</i>Infos zeigen</a>
                 </div>                
                 <div class="col s10"></div>
                 <div class="col s12">
@@ -100,7 +100,7 @@ function generatePdf(){
         var docDefinition = {
                 header: [
                         {
-                                text: 'AR.js by @jerome_etienne - https://github.com/jeromeetienne/ar.js',
+                                text: 'AR.js von @jerome_etienne - https://github.com/jeromeetienne/ar.js',
                                 margin: [0, 0],
                                 alignment: 'center',
                         },                        
@@ -119,7 +119,7 @@ function generatePdf(){
                         			bold: true,
                                         },
                                         {
-                                                text: 'for',
+                                                text: 'für',
                         			fontSize: 20,
         			                bold: false,
                                         }
@@ -132,47 +132,48 @@ function generatePdf(){
                                 margin: [0, 10],
                         },
                         {
-                                text: 'How to Use an AR-Code ?',
+                                text: 'Wie verwende ich einen AR-Code ?',
         			fontSize: 24,
                                 margin: [0, 20],
                         },
                         {
-                                text: 'Step 1 - Get a Phone',
+                                text: 'Schritt 1 - Nimm ein mobiles Gerät (Smartphone, Tablet)',
         			bold: true,
         			fontSize: 15,
                         },
                         {
                                 text: [
-                                        'It works on any browser with WebGL and WebRTC. So android works. Windows mobile works. ',
-                                        'IOS doesn\'t work unfortunately. IOS safari doesn\'t support WebRTC at the moment.',
-                                        ' Apple is currently working on it tho. Let\'s hope they join the party soon!'
+                                        'AR.JS basiert auf WebGL and WebRTC.' 
+                                        'Es läuft auf so gut wie jedem mobilen Gerät. ',
+                                        'Android, Windows Phone, iOS (ab Version 11)',
+                              
                                 ],
                                 margin: [0, 10, 0 , 30],
         		},
                         {
-                                text: 'Step 2 - Scan the QR-Code',
+                                text: 'Step 2 - Scanne den QR-Code',
         			bold: true,
         			fontSize: 15,
                         },
                         {
                                 text: [
-                                        'It will open your web browser to an augmented reality page. ',
-                                        'It will open the url from the qr-code to some AR.js content. ',
-                                        'Then your phone will use the camera to find out the position ',
-                                        'of the marker and display 3d content on top of it. ',
+                                        'Der QR-Code öffnet einen Link zu einer AR-Website.',
+                                        'Vermutlich musst Du Deine Kamera im Browser freigeben.',
+                                        'Dann wird der im QR-Code enthaltene Hiro-Marker gescannt. 
+                                       
                                 ],
                                 margin: [0, 10, 0 , 30],
         		},        
                         {
-                                text: 'Step 3 - Point the Phone at the Hiro Marker',
+                                text: 'Step 3 - Halte Dein Gerät auf den Hiro-Marker',
         			bold: true,
         			fontSize: 15,
                         },
                         {
                                 text: [
-                                        'You are ',
-                                        { text: 'DONE', bold: true, },
-                                        '! Enjoy the Augmented Reality :)',                                        
+                                        'Der AR-Inhalt erscheint 😎.',
+                                        { text: 'Geschafft!', bold: true, },
+                                        'Viel Spaß mit der Augmented Reality im Browser',                                        
                                 ],
                                 margin: [0, 10, 0 , 30],
         		},        
