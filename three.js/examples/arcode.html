@@ -195,9 +195,9 @@ canvas.style.height = '512px';
 
 var context = canvas.getContext('2d')
 
-var kanjiImage = new Image;
-kanjiImage.onload = function() {
-        console.log('kanji image loaded')
+var hiroImage = new Image;
+hiroImage.onload = function() {
+        console.log('hiro image loaded')
         
         if( location.hash.substr(1) !== '' ){
                 var parameters = JSON.parse(decodeURIComponent(location.hash.substr(1)))
@@ -206,12 +206,12 @@ kanjiImage.onload = function() {
                 document.querySelector('#saveInUrl').checked = true
 // debugger;
         }else{
-                document.querySelector('#urlQrCode').value = 'https://jeromeetienne.github.io/AR.js/three.js/examples/mobile-performance.html'
+                document.querySelector('#urlQrCode').value = 'https://mein-ar.glitch.me/'
         }
 
         updateARCode()
 }
-kanjiImage.src = '../../data/images/kanji.png';
+hiroImage.src = '../../data/images/hiro.png';
 
 function updateARCode(){
         var urlQrCode = document.querySelector('#urlQrCode').value
@@ -256,7 +256,7 @@ function updateARCode(){
 function generateArCodeCanvas(canvas, text, onLoad){
         var context = canvas.getContext('2d')
         
-        context.drawImage(kanjiImage, 0, 0, canvas.width, canvas.height);
+        context.drawImage(hiroImage, 0, 0, canvas.width, canvas.height);
 
         generateQrCodeImage(text, function onLoaded(qrCodeImage){
                 console.log('qrcode generated')
@@ -274,8 +274,8 @@ function generateQrCodeImage(text, onLoaded){
 
         var qrcode = new QRCode(container, {
                 text: text,
-                width: 200,
-                height: 200,
+                width: 256,
+                height: 256,
                 colorDark : '#000000',
                 colorLight : '#ffffff',
                 // correctLevel : QRCode.CorrectLevel.H
