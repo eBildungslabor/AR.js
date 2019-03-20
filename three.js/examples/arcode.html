@@ -23,7 +23,7 @@
         <div class="row" id='row-ui' >
                 <div class="col s12">
                         <a class="waves-effect waves-light btn" onclick='hideUI()'><i class="material-icons right">reorder</i>Hide</a>
-                        <h1 class='center-align'>AR-Code Generator (mit Kanji Marker)</h1>
+                        <h1 class='center-align'>AR-Code Generator</h1>
                 </div>
 
                 <div class="col s12">
@@ -211,7 +211,7 @@ kanjiImage.onload = function() {
 
         updateARCode()
 }
-hiroImage.src = '../../data/images/kanji.png';
+kanjiImage.src = '../../data/images/kanji.png';
 
 function updateARCode(){
         var urlQrCode = document.querySelector('#urlQrCode').value
